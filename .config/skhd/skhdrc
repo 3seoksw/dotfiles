@@ -1,0 +1,20 @@
+# Changing Window Focus
+
+# Restart Yabai
+ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + shift + cmd - r : brew services restart yabai
+
+
+# change window focus within space
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west 
+alt - l : yabai -m window --focus east 
+
+# Modifying the Layout
+shift + alt - r : yabai -m space --rotate 270
+
+ctrl + alt - h : yabai -m window --swap west
+ctrl + alt - l : yabai -m window --swap east
+ctrl + alt - k : yabai -m window --swap north 
+ctrl + alt - j : yabai -m window --swap south 
