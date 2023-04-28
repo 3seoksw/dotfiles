@@ -23,6 +23,10 @@ case $INFO in
     ICON_PADDING_RIGHT=3
     ICON=
     ;;
+"Notability")
+    ICON_PADDING_RIGHT=4
+    ICON=
+    ;;
 "Discord")
     ICON=󰙯
     ;;
@@ -75,5 +79,4 @@ case $INFO in
     ;;
 esac
 
-sketchybar --set $NAME icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT
-sketchybar --set $NAME.name label="$INFO"
+sketchybar --set front_app icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT label=$INFO

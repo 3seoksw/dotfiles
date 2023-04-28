@@ -15,6 +15,9 @@ yabai -m config \
     window_opacity off \
     #window_shadow on \
 
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 # Left Click + Drag
 yabai -m config mouse_action1 move 
@@ -31,3 +34,4 @@ yabai -m rule --add app="^Reminder$" manage=off
 yabai -m rule --add app="^Contact$" manage=off
 yabai -m rule --add app="^KakaoTalk$" manage=off
 yabai -m rule --add app="^Stickies$" manage=off
+yabai -m rule --add app="^Messages$" manage=off

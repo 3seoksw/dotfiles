@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
+source "$HOME/.config/sketchybar/icons.sh"
 # FIXME: Running an osascript on an application target opens that app
 # This sleep is needed to try and ensure that theres enough time to
 # quit the app before the next osascript command is called. I assume 
@@ -24,16 +25,15 @@ artist=$(osascript -e 'tell application "Music" to get artist of current track')
 # ALBUM=$(osascript -e 'tell application "Music" to get album of current track')
 loved=$(osascript -l JavaScript -e "Application('Music').currentTrack().loved()")
 if [[ $loved ]]; then
-    lovedIcon=""
-    icon="$(lovedIcon) $(icon)"
+    icon="$LOVED"
 fi
 
 if [[ $PLAYER_STATE == "paused" ]]; then
-    icon=""
+    icon="$MUSIC_PLAY"
 fi
 
 if [[ $PLAYER_STATE == "playing" ]]; then
-    icon=""
+    icon="$MUSIC_PAUSE"
 fi
 
 if [[ ${#title} -gt 25 ]]; then

@@ -1,8 +1,7 @@
-# Changing Window Focus
-
-# Restart Yabai
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 ctrl + shift + cmd - r : brew services restart yabai
+ctrl + shift + cmd - s : brew services restart sketchybar
+ctrl + shift + cmd - i : open /Applications/iTerm.app
 
 
 # change window focus within space
@@ -18,3 +17,8 @@ ctrl + alt - h : yabai -m window --swap west
 ctrl + alt - l : yabai -m window --swap east
 ctrl + alt - k : yabai -m window --swap north 
 ctrl + alt - j : yabai -m window --swap south 
+
+#lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
+shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+lalt - f : yabai -m window --toggle zoom-parent; sketchybar --trigger window_focus
+shift + lalt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
