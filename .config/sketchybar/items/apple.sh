@@ -25,6 +25,7 @@ apple_prefs=(
     icon.padding_right=5
     background.padding_left=5
     background.padding_right=10
+    background.color=$IVORY
 )
 
 apple_activity=(
@@ -36,6 +37,7 @@ apple_activity=(
     icon.padding_right=5
     background.padding_left=5
     background.padding_right=10
+    background.color=$IVORY
 )
 
 apple_lock=(
@@ -47,6 +49,7 @@ apple_lock=(
     icon.padding_right=5
     background.padding_left=5
     background.padding_right=10
+    background.color=$IVORY
 )
 
 sketchybar --add item apple.logo left                  \
