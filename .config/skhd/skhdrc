@@ -1,10 +1,19 @@
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 ctrl + shift + cmd - r : brew services restart yabai
 ctrl + shift + cmd - s : brew services restart sketchybar
-ctrl + shift + cmd - i : open /Applications/iTerm.app
 
+############################
+### Working Environments ###
+############################
+:: default : brew services start yabai sketchybar
+default < cmd - return : open /Applications/iTerm.app 
+default < ctrl + cmd - 1 : open -na /Applications/Firefox.app 
 
-# change window focus within space
+#############
+### Yabai ###
+#############
+
+# Change window focus within space
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - h : yabai -m window --focus west 
@@ -18,6 +27,12 @@ ctrl + alt - l : yabai -m window --swap east
 ctrl + alt - k : yabai -m window --swap north 
 ctrl + alt - j : yabai -m window --swap south 
 
+
+##################
+### Sketchybar ### 
+##################
+
+# Reflecting current running apps
 #lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
 shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 lalt - f : yabai -m window --toggle zoom-parent; sketchybar --trigger window_focus
