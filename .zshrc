@@ -34,6 +34,7 @@ export PATH="$HOME/.local/bin/lvim:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH" 
 
+
 source ~/miniconda/etc/profile.d/conda.sh
 
 # aliases
