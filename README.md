@@ -32,12 +32,12 @@ Then customize it yourself or you can simply copy and paste my settings.
 <img width="2560" alt="sketchybar" src="https://user-images.githubusercontent.com/97219959/235213581-270e5e35-1055-4aae-8acc-70ce77a16177.png">
 
 ### Preview
-- Currently running application per spaces information
+- Currently running applications information per spaces 
 
 <img width="520" alt="bar_1" src="https://user-images.githubusercontent.com/97219959/235318936-ca32df3d-7797-4356-bc7b-153f4cb0e47e.png">
 
 - Playing music information
-- Battery Information
+- Battery information
 - Volume information
 - WiFi information
 - Date information
