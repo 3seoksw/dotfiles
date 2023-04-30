@@ -54,7 +54,6 @@ windows_on_spaces () {
       if [ "$apps" != "" ]; then
         while IFS= read -r app; do
           icon_strip+=" $($HOME/.config/sketchybar/plugins/icon_map.sh "$app")"
-          echo $icon_strip
         done <<< "$apps"
       fi
       args+=(--set space.$space label="$icon_strip" label.drawing=on)
