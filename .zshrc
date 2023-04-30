@@ -5,20 +5,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Created by Zap installer
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-autosuggestions"
 plug "esc/conda-zsh-completion"
 plug "romkatv/powerlevel10k"
+plug "jeffreytse/zsh-vi-mode"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+# zsh Autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080,bold,underline"
 
 # LunarVim
 export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"$HOME/.local/share/lunarvim"}"
@@ -31,4 +32,9 @@ export LUNARVIM_BASE_DIR="${LUNARVIM_BASE_DIR:-"$HOME/.local/share/lunarvim/lvim
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/bin/lvim:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/miniconda/bin:$PATH" 
 
+source ~/miniconda/etc/profile.d/conda.sh
+
+# aliases
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
