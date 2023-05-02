@@ -1,5 +1,4 @@
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
-ctrl + shift + cmd - r : brew services restart yabai
+ctrl + alt + cmd - r : yabai --restart-service
 ctrl + shift + cmd - s : brew services restart sketchybar
 
 ############################
