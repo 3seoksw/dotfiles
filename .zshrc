@@ -16,7 +16,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-autosuggestions"
 plug "esc/conda-zsh-completion"
 plug "romkatv/powerlevel10k"
-plug "jeffreytse/zsh-vi-mode"
+#plug "jeffreytse/zsh-vi-mode"
 
 # zsh Autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080,bold,underline"
@@ -39,3 +39,4 @@ source ~/miniconda/etc/profile.d/conda.sh
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias la='ls -a'
