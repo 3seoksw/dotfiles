@@ -9,6 +9,7 @@ apple_logo=(
     icon.color=$GREEN
     padding_left=15
     padding_right=15
+    background.color="$BAR_COLOUR"
     label.drawing=off
     click_script="$POPUP_CLICK_SCRIPT"
     popup.height=35
