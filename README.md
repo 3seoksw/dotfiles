@@ -32,7 +32,7 @@ Then customize it yourself or you can simply copy and paste my settings.
 <img width="2560" alt="sketchybar" src="https://user-images.githubusercontent.com/97219959/235213581-270e5e35-1055-4aae-8acc-70ce77a16177.png">
 
 ### Preview
-- Currently running applications information per spaces 
+- Currently running applications information per spaces ([yabai](#yabai) required)
 
 <img width="520" alt="bar_1" src="https://user-images.githubusercontent.com/97219959/235318936-ca32df3d-7797-4356-bc7b-153f4cb0e47e.png">
 
@@ -57,7 +57,55 @@ brew tap FelixKratz/formulae
 brew install sketchybar
 ```
 
-### Setup
+### How it works
+Under `~/.config/sketchybar/`, `sketchybarrc` file is required to run *sketchybar*. 
+You can directly add plugins to `sketchybarrc` but I like to organize the files so I made as follows:  
+- `~/.config/sketchybar/sketchybarrc`: sketchybar settings file
+- `~/.config/sketchybar/plugins/`: here goes the the scripts of the plugins you would like to add to your sketchybar
+- `~/.config/sketchybar/items/`: here goes the actual item you would like add to your sketchybar. 
+The files under `items/` will reference the `plugins/` folder for the scripts to run.
+- Example:
+    - `~/.config/sketchybar/plugins/calendar.sh`
+        ```
+        #!/bin/bash
+        
+        sketchybar --set $NAME label="$(date '+%d %b %H:%M')"
+        ```
+    - `~/.config/sketchybar/items/calendar.sh`
+        ```
+        #!/bin/bash
+
+        calendar=(
+            icon=󰃰
+            icon.color=$RED
+            icon.padding_left=10
+            label.color=$WHITE
+            label.padding_right=10
+            background.color=$BACKGROUND_1
+            background.height=25 
+            background.corner_radius=10
+            background.padding_right=30 
+            update_freq=10
+            script="$PLUGIN_DIR/calendar.sh"
+        )
+        echo $calendar
+        
+        sketchybar  --add item calendar right \
+                    --set calendar "${calendar[@]}" \
+        ```
+    - `~/.config/sketchybar/sketchybarrc`
+        ```
+        #!//bin/bash
+
+        ITEM_DIR="$HOME/.config/sketchybar/items"
+
+        source "$ITEM_DIR/calendar.sh"
+
+        sketchybar --update
+        sketchybar --trigger space_change
+        ```
+
+### Prerequisites
 - Fonts (`sf-symbols`, `jetbrains-mono`, [`sketchybar-app-font`](https://github.com/kvndrsslr/sketchybar-app-font))
 ```
 brew tap homebrew/cask-fonts
@@ -65,5 +113,6 @@ brew install --cask sf-symbols
 brew install --cask font-jetbrains-mono
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 ```
+- yabai (optional: currently running apps' information)
 
 ## LunarVim
