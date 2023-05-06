@@ -13,7 +13,6 @@ calendar=(
     update_freq=10
     script="$PLUGIN_DIR/calendar.sh"
 )
-echo $calendar
 
 sketchybar  --add item calendar right \
             --set calendar "${calendar[@]}" \
