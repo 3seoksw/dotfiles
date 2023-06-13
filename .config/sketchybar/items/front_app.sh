@@ -25,6 +25,7 @@ front_app=(
     label.font="$FONT:Black:12.0"
     label.padding_right=10
     associated_display=active
+    label.drawing=on
 )
 
 sketchybar  --add item front_app left           \

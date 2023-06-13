@@ -79,4 +79,6 @@ case $INFO in
     ;;
 esac
 
+icon_res="$($HOME/.config/sketchybar/plugins/icon_map.sh "$INFO")"
+#sketchybar --set front_app icon=$icon_res icon.drawing=on icon.padding_right=$ICON_PADDING_RIGHT label=$INFO
 sketchybar --set front_app icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT label=$INFO

@@ -59,6 +59,7 @@ source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/music.sh"
+#source "$ITEM_DIR/cpu.sh"
 
 sketchybar --update
 sketchybar --trigger space_change
