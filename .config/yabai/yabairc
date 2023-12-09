@@ -1,0 +1,40 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config                         \
+    layout                bsp           \
+    window_placement      second_child  \
+    config top_padding    35            \
+    top_padding           25            \
+    bottom_padding        20            \
+    left_padding          20            \
+    right_padding         20            \
+    window_gap            20            \
+    window_border         on            \
+    window_border_width   3             \
+    mouse_modifier        alt           \
+    window_opacity        off           \
+    #window_shadow        on            \
+
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+# Left Click + Drag
+yabai -m config mouse_action1 move 
+# Right Click + Drag
+yabai -m config mouse_action2 resize 
+
+yabai -m mouse_drop_action swap
+
+# Disable Specific Apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Reminder$" manage=off
+yabai -m rule --add app="^Contact$" manage=off
+yabai -m rule --add app="^KakaoTalk$" manage=off
+yabai -m rule --add app="^Stickies$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Steam Helper$" manage=off
+yabai -m rule --add app="^Digital Colour Meter$" manage=off
