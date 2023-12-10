@@ -1,10 +1,12 @@
 local M = {
-	'AlexvZyl/nordic.nvim',
-  priority = 1000,
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
 }
 
 function M.config()
-  vim.cmd([[colorscheme nordic]])
+	--vim.cmd([[colorscheme tokyonight-night]])
+	vim.cmd([[colorscheme tokyonight-moon]])
 end
 
 return M
