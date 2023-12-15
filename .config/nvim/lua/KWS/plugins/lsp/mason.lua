@@ -20,6 +20,7 @@ M.servers = {
 	"marksman",
 	"tailwindcss",
 	"rust_analyzer",
+	"clangd",
 }
 
 function M.config()
@@ -39,6 +40,7 @@ function M.config()
 			"black", -- python formatter
 			"pylint", -- python linter
 			"eslint_d", -- js linter
+			"clang-format",
 		},
 	})
 end

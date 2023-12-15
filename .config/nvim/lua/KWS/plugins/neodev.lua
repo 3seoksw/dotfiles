@@ -3,7 +3,12 @@ local M = {
 }
 
 function M.config()
-  require("neodev").setup {}
+	require("neodev").setup({
+		library = {
+			plugins = { "neotest" },
+			types = true,
+		},
+	})
 end
 
 return M

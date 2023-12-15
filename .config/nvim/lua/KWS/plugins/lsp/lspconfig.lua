@@ -68,6 +68,7 @@ function M.config()
 		"tailwindcss",
 		"eslint",
 		"rust_analyzer",
+		"clangd",
 	}
 
 	local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }

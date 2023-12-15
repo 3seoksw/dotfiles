@@ -22,6 +22,7 @@ function M.config()
 			"flake8", -- python linter
 			--"pylint",
 			"eslint_d", -- js linter
+			"clang-format",
 		},
 	})
 
@@ -55,6 +56,7 @@ function M.config()
 			formatting.stylua, -- lua formatter
 			formatting.isort,
 			formatting.black,
+			formatting.clang_format,
 			diagnostics.flake8,
 			diagnostics.eslint_d.with({ -- js/ts linter
 				condition = function(utils)

@@ -76,6 +76,11 @@ function M.config()
 			name = "Python",
 			e = { "<cmd>lua require('swenv.api').pick_venv()<CR>", "Choose Env" },
 		},
+
+		d = {
+			name = "dap",
+			m = { "<cmd>lua require('neotest').run.run()<CR>", "Test Method" },
+		},
 	}
 
 	local opts = {
