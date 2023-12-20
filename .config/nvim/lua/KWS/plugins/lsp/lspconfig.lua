@@ -83,6 +83,16 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
+		if server == "clangd" then
+			lspconfig["clangd"].setup({
+				on_attach = function(client, bufnr)
+					client.server_capabilities.signatureHelpProvider = false
+					M.on_attach(client, bufnr)
+				end,
+				capabilities = M.common_capabilities,
+			})
+		end
+
 		if server == "lua_ls" then
 			require("neodev").setup({})
 			lspconfig["lua_ls"].setup({

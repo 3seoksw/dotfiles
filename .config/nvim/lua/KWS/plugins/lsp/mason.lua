@@ -41,6 +41,7 @@ function M.config()
 			"pylint", -- python linter
 			"eslint_d", -- js linter
 			"clang-format",
+			"codelldb",
 		},
 	})
 end

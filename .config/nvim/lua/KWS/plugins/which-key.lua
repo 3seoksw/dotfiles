@@ -80,6 +80,9 @@ function M.config()
 		d = {
 			name = "dap",
 			m = { "<cmd>lua require('neotest').run.run()<CR>", "Test Method" },
+			U = { "<cmd>lua require('dapui').toggle()<CR>", "Toggle DAP UI" },
+			b = { "<cmd>DapToggleBreakpoint <CR>", "Add breakpoint" },
+			r = { "<cmd>DapContinue <CR>", "Start or continue" },
 		},
 	}
 
