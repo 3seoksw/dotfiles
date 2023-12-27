@@ -5,7 +5,7 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
--- Remap SPACE as a leader key 
+-- Remap SPACE as a leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -15,6 +15,8 @@ keymap("n", "<esc>", ":nohlsearch <CR>", opts)
 
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
+
+keymap("n", "<leader>dr", ":!clang++ -Wall % && ./a.out<CR>", opts)
 
 -- Plugin Keymaps Below
 

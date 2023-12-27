@@ -77,12 +77,23 @@ function M.config()
 			e = { "<cmd>lua require('swenv.api').pick_venv()<CR>", "Choose Env" },
 		},
 
+		m = {
+			name = "markdown",
+			m = { "<cmd>MarkdownPreview <CR>", "Markdown Preview" },
+			M = { "<cmd>PeekOpen<CR>", "Peek Markdown Preview" },
+		},
+
 		d = {
 			name = "dap",
 			m = { "<cmd>lua require('neotest').run.run()<CR>", "Test Method" },
+			M = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", "Test Method DAP" },
+			f = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>", "Test Class" },
+			F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" },
 			U = { "<cmd>lua require('dapui').toggle()<CR>", "Toggle DAP UI" },
 			b = { "<cmd>DapToggleBreakpoint <CR>", "Add breakpoint" },
-			r = { "<cmd>DapContinue <CR>", "Start or continue" },
+			c = { "<cmd>DapContinue <CR>", "Start or continue" },
+			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" },
+			r = { ":!clang++ -Wall % && ./a.out<CR>", "Compile and Run" },
 		},
 	}
 

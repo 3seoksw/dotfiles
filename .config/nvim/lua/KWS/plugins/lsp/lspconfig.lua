@@ -83,6 +83,8 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
+		-- see the following
+		-- https://www.reddit.com/r/neovim/comments/16p1e89/masonnvim_clangd_not_finding_header_files/
 		if server == "clangd" then
 			lspconfig["clangd"].setup({
 				on_attach = function(client, bufnr)
