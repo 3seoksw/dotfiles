@@ -69,6 +69,7 @@ function M.config()
 		"eslint",
 		"rust_analyzer",
 		"clangd",
+		"tsserver",
 	}
 
 	local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
