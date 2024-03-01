@@ -1,0 +1,48 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/.config/sketchybar"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+ITEM_DIR="$HOME/.config/sketchybar/items"
+
+source "$CONFIG_DIR/colours.sh"
+
+sketchybar --bar height=40          \
+                 blur_radius=30     \
+                 position=top       \
+                 color=$BAR_COLOUR  \
+                 padding_right=10   \
+                 padding_left=10    \
+
+sketchybar --default padding_left=5                         \
+                     padding_right=5                        \
+                     icon.font="Hack Nerd Font:Bold:17.0"   \
+                     label.font="Hack Nerd Font:Bold:14.0"  \
+                     icon.color=$WHITE                      \
+                     label.color=$WHITE                     \
+                     icon.padding_left=4                    \
+                     icon.padding_right=4                   \
+                     label.padding_left=4                   \
+                     label.padding_right=4                  \
+                     background.height=25                   \
+                     background.corner_radius=5             \
+
+##################
+### Left Items ###
+##################
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+
+###################
+### Centre Item ###
+###################
+source "$ITEM_DIR/media.sh"
+
+
+###################
+### Right Items ###
+###################
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/volume.sh"
+
+sketchybar --update
