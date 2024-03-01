@@ -32,14 +32,12 @@ export LUNARVIM_BASE_DIR="${LUNARVIM_BASE_DIR:-"$HOME/.local/share/lunarvim/lvim
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/bin/lvim:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$HOME/miniconda/bin:$PATH" 
 export PATH="/Applications/ARM/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/Users/kws/anaconda3/bin:$PATH"
 
 #export CXX="/Applications/ARM/bin/arm-none-eabi-g++"
 export OPENAI_API_KEY=""
-
-source ~/miniconda/etc/profile.d/conda.sh
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
@@ -67,3 +65,21 @@ function mymvn() {
 
     mvn archetype:generate -DgroupId="$group_name" -DartifactId="$project_name" -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 }
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/kws/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kws/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kws/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kws/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias t2m="python3 $HOME/Documents/github/latex-mathjax/main.py"
