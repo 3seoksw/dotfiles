@@ -14,11 +14,7 @@ yabai -m config                         \
     window_border_width   3             \
     mouse_modifier        alt           \
     window_opacity        off           \
-    #window_shadow        on            \
-
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+    external_bar          all:32:0      \
 
 # Left Click + Drag
 yabai -m config mouse_action1 move 
@@ -38,3 +34,8 @@ yabai -m rule --add app="^Stickies$" manage=off
 yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Steam Helper$" manage=off
 yabai -m rule --add app="^Digital Colour Meter$" manage=off
+yabai -m rule --add app="^Stats$" manage=off
+
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
