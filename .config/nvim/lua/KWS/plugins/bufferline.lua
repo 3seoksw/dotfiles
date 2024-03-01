@@ -9,7 +9,7 @@ local M = {
 	},
 	opts = {
 		options = {
-			mode = "buffers",
+			mode = "tabs",
 			separator_style = "slant",
 		},
 	},

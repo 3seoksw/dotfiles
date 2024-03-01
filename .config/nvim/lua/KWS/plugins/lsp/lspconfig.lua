@@ -84,6 +84,22 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
+		if server == "pyright" then
+			local python_root_files = {
+				"pyproject.toml",
+				"setup.py",
+				"setup.cfg",
+				"requirements.txt",
+				"Pipfile",
+				"pyrightconfig.json",
+			}
+			lspconfig["pyright"].setup({
+				on_attach = M.on_attach,
+				capabilities = M.common_capabilities(),
+				root_dir = lspconfig.util.root_pattern(unpack(python_root_files)),
+			})
+		end
+
 		-- see the following
 		-- https://www.reddit.com/r/neovim/comments/16p1e89/masonnvim_clangd_not_finding_header_files/
 		if server == "clangd" then
