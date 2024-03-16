@@ -8,7 +8,7 @@ volume_slider=(
   slider.highlight_color=$THIRD_COLOUR
   slider.background.height=5
   slider.background.corner_radius=3
-  slider.background.color=$BACKGROUND_2
+  slider.background.color=$GREY
   slider.knob=􀀁
   slider.knob.drawing=off
 )
@@ -20,15 +20,13 @@ volume_icon=(
   #icon.width=0
   #icon.align=left
   icon.color=$THIRD_COLOUR
-  icon.font="$FONT:Regular:14.0"
   #label.width=25
   #label.align=left
-  label.font="$FONT:Regular:14.0"
 )
 
 status_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
+  background.color=$ITEM_BG_COLOUR1
+  background.border_color=$BORDER_COLOUR
   background.border_width=2
 )
 

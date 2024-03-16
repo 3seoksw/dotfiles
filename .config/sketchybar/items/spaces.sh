@@ -17,8 +17,9 @@ do
 done
 
 spaces_bracket=(
-  background.color=$BAR_BACKGROUND_COLOUR
-  background.border_color=$BACKGROUND_2
+  background.color=$ITEM_BG_COLOUR1
+  background.border_color=$BORDER_COLOUR
+  background.border_width=2
 )
 
 sketchybar --add bracket spaces_bracket '/space\..*/'  \

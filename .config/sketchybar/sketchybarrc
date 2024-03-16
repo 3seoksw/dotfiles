@@ -13,10 +13,10 @@ sketchybar --bar height=40          \
                  padding_right=10   \
                  padding_left=10    \
 
-sketchybar --default padding_left=5                         \
-                     padding_right=5                        \
-                     icon.font="Hack Nerd Font:Bold:17.0"   \
-                     label.font="Hack Nerd Font:Bold:14.0"  \
+sketchybar --default padding_left=10                        \
+                     padding_right=10                       \
+                     icon.font="JetBrains Mono:Bold:17.0"   \
+                     label.font="JetBrains Mono:Bold:14.0"  \
                      icon.color=$WHITE                      \
                      label.color=$WHITE                     \
                      icon.padding_left=4                    \
@@ -43,6 +43,9 @@ source "$ITEM_DIR/media.sh"
 ### Right Items ###
 ###################
 source "$ITEM_DIR/calendar.sh"
+#source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/wifi.sh"
 
 sketchybar --update
