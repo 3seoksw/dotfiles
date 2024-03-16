@@ -5,7 +5,7 @@ yabai -m config                         \
     layout                bsp           \
     window_placement      second_child  \
     config top_padding    35            \
-    top_padding           25            \
+    top_padding           35            \
     bottom_padding        20            \
     left_padding          20            \
     right_padding         20            \
