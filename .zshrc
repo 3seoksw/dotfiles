@@ -21,13 +21,6 @@ plug "romkatv/powerlevel10k"
 # zsh Autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080,bold,underline"
 
-# LunarVim
-export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"$HOME/.local/share/lunarvim"}"
-export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"$HOME/.config/lvim"}"
-export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"$HOME/.cache/lvim"}"
-export LUNARVIM_BASE_DIR="${LUNARVIM_BASE_DIR:-"$HOME/.local/share/lunarvim/lvim"}"
-
-
 # PATH Variables
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/bin/lvim:$PATH"
