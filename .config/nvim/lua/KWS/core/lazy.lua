@@ -17,7 +17,7 @@ require("lazy").setup({
 	{ import = "KWS.plugins.dap" },
 }, {
 	install = {
-		colorscheme = { "tokyonight" },
+		colorscheme = { "everforest" },
 	},
 	checker = {
 		enabled = true,
