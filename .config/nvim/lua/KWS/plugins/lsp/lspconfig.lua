@@ -55,6 +55,13 @@ end
 function M.config()
 	local lspconfig = require("lspconfig")
 
+	-- Disable LSP diagnostics virtual texts
+	vim.diagnostic.config({
+		virtual_text = false,
+		underline = true,
+		signs = true,
+	})
+
 	local servers = {
 		"lua_ls",
 		"cssls",

@@ -19,9 +19,10 @@ function M.config()
 			"prettier", -- prettier formatter
 			"stylua", -- lua formatter
 			"black", -- python formatter
-			"flake8", -- python linter
-			--"pylint",
+			--"flake8", -- python linter
+			"pylint", -- python linter
 			"eslint_d", -- js linter
+			"eslint",
 			"clang-format",
 		},
 	})
@@ -29,15 +30,6 @@ function M.config()
 	-- for conciseness
 	local formatting = null_ls.builtins.formatting -- to setup formatters
 	local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-	local flake8 = { null_ls.builtins.diagnostics.flake8 }
-	flake8.args = {
-		"--ignore=E203",
-		"--format",
-		"default",
-		"--stdin-display-name",
-		"$FILENAME",
-		"-",
-	}
 
 	-- to setup format on save
 	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -57,12 +49,14 @@ function M.config()
 			formatting.isort,
 			formatting.black,
 			formatting.clang_format,
-			diagnostics.flake8,
-			diagnostics.eslint_d.with({ -- js/ts linter
-				condition = function(utils)
-					return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-				end,
-			}),
+			diagnostics.pylint,
+			--diagnostics.flake8,
+			--diagnostics.pylint,
+			--diagnostics.eslint.with({ -- js/ts linter
+			--	condition = function(utils)
+			--		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
+			--	end,
+			--}),
 		},
 		-- configure format on save
 		on_attach = function(current_client, bufnr)
