@@ -4,6 +4,7 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	},
 }
 
@@ -19,7 +20,7 @@ function M.config()
 			"prettier", -- prettier formatter
 			"stylua", -- lua formatter
 			"black", -- python formatter
-			--"flake8", -- python linter
+			"flake8", -- python linter
 			"pylint", -- python linter
 			"eslint_d", -- js linter
 			"eslint",
@@ -40,23 +41,17 @@ function M.config()
 		root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 		-- setup formatters & linters
 		sources = {
-			--  to disable file types use
-			--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 			formatting.prettier.with({
 				extra_filetypes = { "svelte" },
 			}), -- js/ts formatter
 			formatting.stylua, -- lua formatter
-			formatting.isort,
+			--formatting.isort,
 			formatting.black,
 			formatting.clang_format,
-			diagnostics.pylint,
-			--diagnostics.flake8,
-			--diagnostics.pylint,
-			--diagnostics.eslint.with({ -- js/ts linter
-			--	condition = function(utils)
-			--		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-			--	end,
-			--}),
+			require("none-ls.diagnostics.flake8").with({
+				extra_args = { "--max-line-length", "100" },
+			}),
+			require("none-ls.diagnostics.eslint_d"),
 		},
 		-- configure format on save
 		on_attach = function(current_client, bufnr)
