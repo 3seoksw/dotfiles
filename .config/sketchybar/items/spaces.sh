@@ -27,7 +27,7 @@ sketchybar --add bracket spaces_bracket '/space\..*/'  \
 
 sketchybar --add item space_separator left                              \
            --set space_separator icon="􀆊"                               \
-                                 icon.color=$SECOND_COLOUR              \
+                                 icon.color=$TEXT_COLOUR                \
                                  icon.font="$FONT:Heavy:16.0"           \
                                  icon.padding_left=5                    \
                                  padding_left=10                        \
