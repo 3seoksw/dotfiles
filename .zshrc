@@ -31,6 +31,7 @@ export PATH="/Users/kws/anaconda3/bin:$PATH"
 
 #export CXX="/Applications/ARM/bin/arm-none-eabi-g++"
 export OPENAI_API_KEY=""
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
