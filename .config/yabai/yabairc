@@ -16,6 +16,7 @@ yabai -m config                         \
     window_opacity        off           \
     external_bar          all:32:0      \
 
+yabai -m config mouse_modifier ctrl
 # Left Click + Drag
 yabai -m config mouse_action1 move 
 # Right Click + Drag
