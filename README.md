@@ -7,4 +7,4 @@
 - [neovim 💬](https://github.com/neovim/neovim)
 - [borders ◻️](https://github.com/FelixKratz/JankyBorders)
 
-<img width="2560" alt="Screenshot 2024-03-16 at 22 56 20" src="https://github.com/3seoksw/dotfiles/assets/97219959/ae86f787-9618-48a4-b496-f32f65f96268">
+<img width="2560" alt="Screenshot 2024-04-21 at 21 54 38" src="https://github.com/3seoksw/dotfiles/assets/97219959/73ed7aad-065b-409d-b982-bb11265633b8">
