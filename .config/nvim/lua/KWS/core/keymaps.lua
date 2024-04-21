@@ -18,12 +18,21 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 
 keymap("n", "<leader>dr", ":!clang++ -Wall % && ./a.out<CR>", opts)
 
+-- Resizing
+keymap("n", "<C-a>l", ":vertical resize +4<CR>", opts)
+keymap("n", "<C-a>h", ":vertical resize -4<CR>", opts)
+keymap("n", "<C-a>k", ":horizontal resize -4<CR>", opts)
+keymap("n", "<C-a>j", ":horizontal resize +4<CR>", opts)
+
 -- Plugin Keymaps Below
 
 -- nvim-tree
 keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
 -- VimTex
-keymap("n", "<leader>ll", ":VimtexCompile<CR>", opts)
-keymap("n", "<leader>li", ":VimtexInfo<CR>", opts)
-keymap("n", "<leader>lw", ":VimtexView<CR>", opts)
+keymap("n", "<\\>ll", ":VimtexCompile<CR>", opts)
+keymap("n", "<\\>li", ":VimtexInfo<CR>", opts)
+keymap("n", "<\\>lw", ":VimtexView<CR>", opts)
+
+-- LuaSnip
+-- keymap("i", )

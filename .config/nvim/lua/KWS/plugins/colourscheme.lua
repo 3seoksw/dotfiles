@@ -1,15 +1,20 @@
-local M = {
+return {
 	"neanias/everforest-nvim",
 	lazy = false,
 	priority = 1000,
+	config = function()
+		require("everforest").setup({
+			background = "hard",
+		})
+		vim.cmd([[colorscheme everforest]])
+	end,
 }
-
-function M.config()
-	-- vim.cmd([[colorscheme tokyonight-moon]])
-	require("everforest").setup({
-		background = "hard",
-	})
-	vim.cmd([[colorscheme everforest]])
-end
-
-return M
+--return {
+--	"folke/tokyonight.nvim",
+--	lazy = false,
+--	priority = 1000,
+--	opts = {},
+--	config = function()
+--		vim.cmd([[colorscheme tokyonight]])
+--	end,
+--}

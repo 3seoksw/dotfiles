@@ -77,6 +77,7 @@ function M.config()
 		"rust_analyzer",
 		"clangd",
 		"tsserver",
+		"texlab",
 	}
 
 	local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
