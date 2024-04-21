@@ -1,0 +1,31 @@
+add_newline = true
+
+[line_break]
+disabled = true
+
+[username]
+# style_root = "white bold"
+format = "[ $user](yellow bold)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@](bold red)[$hostname](blue) "
+# format = "[ ](yellow bold)"
+trim_at = "."
+disabled = false
+
+[conda]
+ignore_base = false
+format = "[$symbol$environment ](dimmed green)"
+
+[python]
+format = "[$symbol$version ](bold )"
+symbol =  "🐍"
+# symbol =  " "
+
+[ruby]
+disabled = true
+
+right_format = "$all"
