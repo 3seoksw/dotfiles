@@ -1,3 +1,5 @@
+#!/bin/bash
+
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
@@ -25,17 +27,23 @@ yabai -m config mouse_action2 resize
 yabai -m mouse_drop_action swap
 
 # Disable Specific Apps
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Reminder$" manage=off
-yabai -m rule --add app="^Contact$" manage=off
-yabai -m rule --add app="^KakaoTalk$" manage=off
-yabai -m rule --add app="^Stickies$" manage=off
-yabai -m rule --add app="^Messages$" manage=off
-yabai -m rule --add app="^Steam Helper$" manage=off
-yabai -m rule --add app="^Digital Colour Meter$" manage=off
-yabai -m rule --add app="^Stats$" manage=off
+APPS=(
+  "^System Settings$"
+  "^Calculator$"
+  "^Finder$"
+  "^Reminder$"
+  "^Contact$"
+  "^KakaoTalk$"
+  "^Stickies$"
+  "^Messages$"
+  "^Steam Helper$"
+  "^Digital Colour Meter$"
+  "^Stats$"
+  "^Installer$"
+)
+for app in "${APPS[@]}"; do
+    yabai -m rule --add app="$app" manage=off
+done
 
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
