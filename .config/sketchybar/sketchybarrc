@@ -7,7 +7,7 @@ ITEM_DIR="$HOME/.config/sketchybar/items"
 source "$CONFIG_DIR/colours.sh"
 
 sketchybar --bar height=40          \
-                 blur_radius=30     \
+                 blur_radius=10     \
                  position=top       \
                  color=$BAR_COLOUR  \
                  padding_right=10   \
@@ -47,5 +47,6 @@ source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/resource.sh"
 
 sketchybar --update

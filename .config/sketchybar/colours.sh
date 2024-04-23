@@ -15,13 +15,14 @@ export BLACK=0x40000000
 # export SECOND_COLOUR=$WHITE
 # export THIRD_COLOUR=$WHITE
 export GREEN=0xffc3e88d
+export BLUE=0xff7dcfff
 export ORANGE=0xffff9e64
 export YELLOW=0xffffc777
 export RED=0xffff757f
 
 # Everforest
 export TEXT_COLOUR=$WHITE
-export BAR_COLOUR=0xff2e383c
+export BAR_COLOUR=0xf02e383c
 export BORDER_COLOUR=0xff495156
 export ITEM_BG_COLOUR1=0xff374145
 export ITEM_BG_COLOUR2=0xff414b50
