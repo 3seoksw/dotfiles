@@ -28,4 +28,15 @@ symbol =  "🐍"
 [ruby]
 disabled = true
 
-right_format = "$all"
+[git_status]
+conflicted = "⚔️ "
+ahead = "⇡"
+behind = "[⇣${count} ](bold dimmed blue)"
+diverged = "⇕${ahead_count}⇣${behind_count} "
+untracked = "[?${count} ](bold red)"
+modified ="[!${count} ](bold yellow)"
+staged = "[+${count} ](bold green)"
+renamed = "» ×${count} "
+deleted = "[✘ ×${count} ](bold red)"
+style = "bold purple"
+format = '([\[$all_status$ahead_behind\]]($style) )'
