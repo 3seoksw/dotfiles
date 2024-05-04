@@ -34,5 +34,4 @@ keymap("n", "<\\>ll", ":VimtexCompile<CR>", opts)
 keymap("n", "<\\>li", ":VimtexInfo<CR>", opts)
 keymap("n", "<\\>lw", ":VimtexView<CR>", opts)
 
--- LuaSnip
 -- keymap("i", )

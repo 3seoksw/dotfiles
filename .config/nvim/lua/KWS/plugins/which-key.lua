@@ -95,6 +95,11 @@ function M.config()
 			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" },
 			r = { ":!clang++ -Wall % && ./a.out<CR>", "Compile and Run" },
 		},
+		--c = {
+		--	name = "CodeSnap",
+		--	c = { "<cmd>CodeSnap<CR>", "Save selected code snapshot into clipboard" },
+		--	s = { "<cmd>CodeSnapSave<CR>", "Save selected code snapshot into `~/Pictures`" },
+		--},
 	}
 
 	local opts = {

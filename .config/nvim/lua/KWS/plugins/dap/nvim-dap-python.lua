@@ -3,6 +3,7 @@ local M = {
 	ft = "python",
 	dependencies = {
 		"mfussenegger/nvim-dap",
+		"rcarriga/nvim-dap-ui",
 	},
 }
 
