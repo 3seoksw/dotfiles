@@ -21,14 +21,24 @@ export YELLOW=0xffffc777
 export RED=0xffff757f
 
 # Everforest
+# export TEXT_COLOUR=$WHITE
+# export BAR_COLOUR=0xcc2e383c
+# export BORDER_COLOUR=0xff495156
+# export ITEM_BG_COLOUR1=0xff374145
+# export ITEM_BG_COLOUR2=0xff414b50
+# export ACCENT_COLOUR=0xffa7c080
+# export SECOND_COLOUR=0xff7fbbb3
+# export THIRD_COLOUR=0xffdbbc7f
+
+# Kanagawa - Wave
 export TEXT_COLOUR=$WHITE
-export BAR_COLOUR=0xf02e383c
-export BORDER_COLOUR=0xff495156
-export ITEM_BG_COLOUR1=0xff374145
-export ITEM_BG_COLOUR2=0xff414b50
-export ACCENT_COLOUR=0xffa7c080
-export SECOND_COLOUR=0xff7fbbb3
-export THIRD_COLOUR=0xffdbbc7f
+export BAR_COLOUR=0xFF16161D
+export BORDER_COLOUR=0xff7f8490
+export ITEM_BG_COLOUR1=0xFF1F1F28
+export ITEM_BG_COLOUR2=0xFF1F1F28
+export ACCENT_COLOUR=0xFF957FB8
+export SECOND_COLOUR=0xFF7E9CD8
+export THIRD_COLOUR=0xFFFFA066
 
 # Tokyo-Night
 # export TEXT_COLOUR=$BLACK

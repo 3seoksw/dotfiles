@@ -7,7 +7,7 @@ ITEM_DIR="$HOME/.config/sketchybar/items"
 source "$CONFIG_DIR/colours.sh"
 
 sketchybar --bar height=40          \
-                 blur_radius=10     \
+                 blur_radius=90     \
                  position=top       \
                  color=$BAR_COLOUR  \
                  padding_right=10   \
