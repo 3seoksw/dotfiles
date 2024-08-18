@@ -21,7 +21,7 @@ ignore_base = false
 format = "[$symbol$environment ](dimmed green)"
 
 [python]
-format = "[$symbol$version ](bold )"
+format = "[$symbol${virtualenv}]($style) $version "
 symbol =  "🐍"
 # symbol =  " "
 
