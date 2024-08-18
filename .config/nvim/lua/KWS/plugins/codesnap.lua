@@ -10,7 +10,7 @@ function M.config()
 		save_path = "~/Pictures",
 		has_breadcrumbs = true,
 		bg_theme = "bamboo",
-		bg_color = "#535c68",
+		bg_color = "#ffffff", --535c68
 		code_font_family = "JetBrains Mono",
 	})
 end

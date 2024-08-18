@@ -39,7 +39,8 @@ function M.config()
 			"isort", -- python formatter
 			"black", -- python formatter
 			"pylint", -- python linter
-			"eslint_d", -- js linter
+			--"eslint_d", -- js linter
+			"eslint", -- js linter
 			"clang-format",
 			"codelldb",
 		},

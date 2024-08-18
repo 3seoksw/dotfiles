@@ -22,7 +22,7 @@ function M.config()
 			"black", -- python formatter
 			"flake8", -- python linter
 			"pylint", -- python linter
-			"eslint_d", -- js linter
+			-- "eslint_d", -- js linter
 			"eslint",
 			"clang-format",
 		},
@@ -52,6 +52,7 @@ function M.config()
 				extra_args = { "--max-line-length", "100" },
 			}),
 			require("none-ls.diagnostics.eslint_d"),
+			--require("none-ls.diagnostics.eslint"),
 		},
 		-- configure format on save
 		on_attach = function(current_client, bufnr)

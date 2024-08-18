@@ -1,5 +1,0 @@
-- [ ] VimTex
-  - [ ] LuaSnip
-    - [ ] tab key to hop
-    - [ ] more Tex snippets
-    - [ ] see more example usages

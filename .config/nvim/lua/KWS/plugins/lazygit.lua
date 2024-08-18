@@ -4,5 +4,4 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	vim.cmd([[nnoremap <silent> <leader>gg :LazyGit<CR>]]),
 }
