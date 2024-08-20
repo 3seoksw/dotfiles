@@ -43,6 +43,7 @@ function M.config()
 			"eslint", -- js linter
 			"clang-format",
 			"codelldb",
+			"debugpy",
 		},
 	})
 end

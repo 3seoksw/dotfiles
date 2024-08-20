@@ -23,23 +23,3 @@ keymap("n", "<C-a>l", ":vertical resize +4<CR>", opts)
 keymap("n", "<C-a>h", ":vertical resize -4<CR>", opts)
 keymap("n", "<C-a>k", ":horizontal resize -4<CR>", opts)
 keymap("n", "<C-a>j", ":horizontal resize +4<CR>", opts)
-
---------------------------
--- Plugin Keymaps Below --
---------------------------
-
--- nvim-tree
-keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
-
--- lazygit
-keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
-
--- swenv
-keymap("n", "<leader>Pe", "<CMD>lua require('swenv.api').pick_venv()<CR>", opts)
-
--- VimTex
-keymap("n", "<\\>ll", ":VimtexCompile<CR>", opts)
-keymap("n", "<\\>li", ":VimtexInfo<CR>", opts)
-keymap("n", "<\\>lw", ":VimtexView<CR>", opts)
-
--- keymap("i", )

@@ -1,7 +1,5 @@
 local M = {
 	"simrat39/symbols-outline.nvim",
-	--vim.cmd([[nnoremap <silent> <leader>os :SymbolsOutline<CR>]]),
-	vim.keymap.set("n", "<leader>os", ":SymbolsOutline<CR>", { desc = "Toggle Symbols Outline" }),
 	opts = {
 		highlight_hovered_item = true,
 		show_guides = true,
