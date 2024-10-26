@@ -22,6 +22,11 @@ function M.config()
 					["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 				},
 			},
+			picker = {
+				colorscheme = {
+					enable_preview = true,
+				},
+			},
 		},
 	})
 

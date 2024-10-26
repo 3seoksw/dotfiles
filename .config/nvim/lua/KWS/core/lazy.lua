@@ -18,6 +18,7 @@ require("lazy").setup({
 	{ import = "KWS.plugins" },
 	{ import = "KWS.plugins.lsp" },
 	{ import = "KWS.plugins.dap" },
+	{ import = "KWS.plugins.colourschemes" },
 }, {
 	install = {
 		colorscheme = { "kanagawa" },

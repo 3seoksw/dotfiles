@@ -27,6 +27,14 @@ function M.config()
 		{ "<leader>fs", "<CMD>Telescope live_grep<cr>", desc = "Find string in cwd" },
 		{ "<leader>fc", "<CMD>Telescope grep_string<cr>", desc = "Find string under cursor in cwd" },
 
+		-- LSP
+		{ "g", group = "LSP", icon = " " },
+		{ "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to definition" },
+		{ "K", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover details" },
+		{ "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc = "List all the implementations" },
+		{ "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "Go to references" },
+		{ "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Diagnostics" },
+
 		-- nvim-tree
 		{ "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Toggle nvim-tree" },
 
@@ -52,6 +60,10 @@ function M.config()
 		-- Symbols Outline
 		{ "<leader>o", group = "Symbols Outline", icon = " " },
 		{ "<leader>os", ":SymbolsOutline<CR>", desc = "Toggle Symbols Outline" },
+
+		-- Markdown
+		{ "<leader>m", group = "Markdown", icon = " " },
+		{ "<leader>mm", ":MarkdownPreviewToggle<CR>", desc = "Toggle Markdown Preview" },
 	})
 end
 
