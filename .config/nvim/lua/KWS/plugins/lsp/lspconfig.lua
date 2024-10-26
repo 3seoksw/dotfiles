@@ -21,16 +21,14 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	lsp_keymaps(bufnr)
-
 	if client.supports_method("textDocument/inlayHint") then
-		vim.lsp.inlay_hint.enable(bufnr, true)
+		vim.lsp.inlay_hint.enable(true, { bufnr })
 	end
 end
 
 M.toggle_inlay_hints = function()
 	local bufnr = vim.api.nvim_get_current_buf()
-	vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr }), { bufnr })
 end
 
 function M.common_capabilities()
@@ -76,7 +74,7 @@ function M.config()
 		"eslint",
 		"rust_analyzer",
 		"clangd",
-		"tsserver",
+		"ts_ls",
 		"texlab",
 	}
 
