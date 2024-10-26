@@ -1,0 +1,11 @@
+require("items.apple")
+require("items.spaces")
+--require("items.front_app") (inside the "items.spaces")
+
+require("items.calendar")
+require("items.battery")
+require("items.volume")
+require("items.wifi")
+require("items.resource")
+--require("items.ram")
+--require("items.cpu")

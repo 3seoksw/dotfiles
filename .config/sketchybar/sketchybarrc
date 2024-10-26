@@ -1,51 +1,12 @@
-#!/bin/bash
+#!/opt/homebrew/bin/lua
 
-CONFIG_DIR="$HOME/.config/sketchybar"
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-ITEM_DIR="$HOME/.config/sketchybar/items"
+package.cpath = package.cpath .. ";/Users/" .. os.getenv("USER") .. "/.local/share/sketchybar_lua/?.so"
 
-source "$CONFIG_DIR/colours.sh"
+sbar = require("sketchybar")
 
-sketchybar --bar height=40          \
-                 blur_radius=90     \
-                 position=top       \
-                 color=$BAR_COLOUR  \
-                 padding_right=10   \
-                 padding_left=10    \
+sbar.begin_config()
+sbar.hotload(true)
+require("init")
+sbar.end_config()
 
-sketchybar --default padding_left=10                        \
-                     padding_right=10                       \
-                     icon.font="JetBrains Mono:Bold:17.0"   \
-                     label.font="JetBrains Mono:Bold:14.0"  \
-                     icon.color=$WHITE                      \
-                     label.color=$WHITE                     \
-                     icon.padding_left=4                    \
-                     icon.padding_right=4                   \
-                     label.padding_left=4                   \
-                     label.padding_right=4                  \
-                     background.height=25                   \
-                     background.corner_radius=5             \
-
-##################
-### Left Items ###
-##################
-source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
-
-###################
-### Centre Item ###
-###################
-source "$ITEM_DIR/media.sh"
-
-
-###################
-### Right Items ###
-###################
-source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/resource.sh"
-
-sketchybar --update
+sbar.event_loop()
