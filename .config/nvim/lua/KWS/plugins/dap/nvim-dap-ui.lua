@@ -11,7 +11,8 @@ function M.config()
 	local dapui = require("dapui")
 
 	dapui.setup({
-		icons = { expanded = "", collapsed = "", circular = "" },
+		force_buffers = true,
+		icons = { current_frame = "", expanded = "", collapsed = "", circular = "" },
 		mappings = {
 			-- Use a table to apply multiple mappings
 			expand = { "<CR>", "<2-LeftMouse>" },
