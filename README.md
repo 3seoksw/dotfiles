@@ -2,9 +2,10 @@
 
 # Overview 🥞
 
-- [yabai 🪟](https://github.com/koekeishiya/yabai)
+- [AeroSpace 🚀](https://github.com/nikitabobko/AeroSpace)
 - [SketckyBar 🎨](https://github.com/FelixKratz/SketchyBar)
+- [JankyBorders 🔳](https://github.com/FelixKratz/JankyBorders)
 - [neovim 💬](https://github.com/neovim/neovim)
-- [borders ◻️](https://github.com/FelixKratz/JankyBorders)
+- ~~[yabai 🪟](https://github.com/koekeishiya/yabai)~~
 
-<img width="2560" alt="Screenshot 2024-04-21 at 21 54 38" src="https://github.com/3seoksw/dotfiles/assets/97219959/73ed7aad-065b-409d-b982-bb11265633b8">
+<img width="2560" alt="26OCT24_screenshot" src="screenshots/desktop.png">
