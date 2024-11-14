@@ -38,6 +38,7 @@ outer.right =      30
 [mode.main.binding]
 ctrl-cmd-enter = 'exec-and-forget open /Applications/kitty.app'
 ctrl-cmd-f = 'exec-and-forget open /Applications/Firefox.app'
+ctrl-cmd-z = 'exec-and-forget open /Applications/"Zen Browser.app"'
 ctrl-cmd-m = 'exec-and-forget open /System/Applications/Music.app'
 
 # Focu
@@ -78,10 +79,14 @@ alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 ctrl-1 = 'workspace 1'
 ctrl-2 = 'workspace 2'
 ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
 
 # Modes
 alt-shift-semicolon = 'mode service'
