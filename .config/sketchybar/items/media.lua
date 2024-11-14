@@ -95,11 +95,6 @@ local media = sbar.add("item", {
 	width = 0,
 })
 
---local media_control = sbar.add("item", "media_ctrl", {
---})
---"􀊆"
---"􀊄"
-
 local media_border = sbar.add("item", "media_border", {
 	position = "popup." .. volume_settings.name,
 	width = popup_width,

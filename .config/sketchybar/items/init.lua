@@ -4,6 +4,7 @@ require("items.spaces")
 
 require("items.calendar")
 require("items.battery")
+require("items.media")
 require("items.volume")
 require("items.wifi")
 require("items.resource")

@@ -29,4 +29,13 @@ sbar.default({
 	},
 	padding_left = 10,
 	padding_right = 10,
+	popup = {
+		align = "center",
+		background = {
+			color = colours.ITEM_BG_COLOUR2,
+			border_color = colours.IVORY,
+			border_width = 1,
+			corner_radius = 10,
+		},
+	},
 })
