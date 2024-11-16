@@ -8,4 +8,4 @@
 - [neovim 💬](https://github.com/neovim/neovim)
 - ~~[yabai 🪟](https://github.com/koekeishiya/yabai)~~
 
-<img width="2560" alt="26OCT24_screenshot" src="screenshots/desktop.png">
+<img width="2560" alt="16NOV24" src="screenshots/desktop.png">
