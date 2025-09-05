@@ -21,7 +21,7 @@ require("lazy").setup({
 	{ import = "KWS.plugins.colourschemes" },
 }, {
 	install = {
-		colorscheme = { "kanagawa" },
+		colorscheme = { "nordic" },
 	},
 	checker = {
 		enabled = true,
