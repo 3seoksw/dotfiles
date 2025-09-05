@@ -30,6 +30,7 @@ function M.config()
 		},
 	})
 	require("mason-lspconfig").setup({
+		automatic_enable = false,
 		ensure_installed = M.servers,
 	})
 	require("mason-tool-installer").setup({
