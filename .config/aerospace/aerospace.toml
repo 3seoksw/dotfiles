@@ -1,6 +1,6 @@
 start-at-login = true
-after-login-command = ["exec-and-forget sketchybar --reload"]
-after-startup-command = ["exec-and-forget sketchybar && sketchybar --reload"]
+after-login-command = []
+after-startup-command = []
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
@@ -40,6 +40,7 @@ ctrl-cmd-enter = 'exec-and-forget open /Applications/kitty.app'
 ctrl-cmd-f = 'exec-and-forget open /Applications/Firefox.app'
 ctrl-cmd-z = 'exec-and-forget open /Applications/"Zen Browser.app"'
 ctrl-cmd-m = 'exec-and-forget open /System/Applications/Music.app'
+ctrl-cmd-r = 'exec-and-forget sketchybar --reload'
 
 # Focu
 alt-h = 'focus left'
@@ -82,6 +83,9 @@ ctrl-3 = 'workspace 3'
 ctrl-4 = 'workspace 4'
 ctrl-5 = 'workspace 5'
 
+ctrl-shift-l = 'workspace next'
+ctrl-shift-h = 'workspace prev'
+
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -111,4 +115,10 @@ if.app-id = 'com.apple.MobileSMS'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.kakao.KakaoTalkMac'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.isaacmarovitz.Whisky'
 run = 'layout floating'
