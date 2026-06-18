@@ -1,8 +1,8 @@
 start-at-login = true
-after-login-command = []
-after-startup-command = []
+after-login-command = ['exec-and-forget sketchybar --reload']
+after-startup-command = ['exec-and-forget sketchybar']
 exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -32,7 +32,7 @@ inner.horizontal = 30
 inner.vertical =   30
 outer.left =       30
 outer.bottom =     20
-outer.top =        60
+outer.top =        40
 outer.right =      30
 
 [mode.main.binding]
@@ -121,4 +121,10 @@ if.app-id = 'com.apple.iCal'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.isaacmarovitz.Whisky'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.cisco.secureclient.gui'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
 run = 'layout floating'
