@@ -22,7 +22,7 @@ function M.config()
 			"black", -- python formatter
 			"flake8", -- python linter
 			"pylint", -- python linter
-			-- "eslint_d", -- js linter
+			"eslint_d", -- js linter
 			"eslint",
 			"clang-format",
 		},
@@ -42,20 +42,21 @@ function M.config()
 		-- setup formatters & linters
 		sources = {
 			formatting.prettier.with({
-				extra_filetypes = { "svelte" },
+				extra_filetypes = { "svelte", "markdown" },
 			}), -- js/ts formatter
 			formatting.stylua, -- lua formatter
 			--formatting.isort,
 			formatting.black,
 			formatting.clang_format,
 			require("none-ls.diagnostics.flake8").with({
-				extra_args = { "--max-line-length", "100" },
+				extra_args = { "--ignore=E203,W503", "--max-line-length", "100" },
 			}),
 			require("none-ls.diagnostics.eslint_d"),
 			--require("none-ls.diagnostics.eslint"),
 		},
 		-- configure format on save
 		on_attach = function(current_client, bufnr)
+			current_client.offset_encoding = "utf-16"
 			if current_client.supports_method("textDocument/formatting") then
 				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 				vim.api.nvim_create_autocmd("BufWritePre", {

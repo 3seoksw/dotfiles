@@ -9,17 +9,6 @@ local M = {
 	},
 }
 
-local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	local keymap = vim.api.nvim_buf_set_keymap
-	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-end
-
 M.on_attach = function(client, bufnr)
 	if client.supports_method("textDocument/inlayHint") then
 		vim.lsp.inlay_hint.enable(true, { bufnr })
@@ -46,6 +35,7 @@ function M.common_capabilities()
 			"additionalTextEdits",
 		},
 	}
+	capabilities.offsetEncoding = "utf-16"
 
 	return capabilities
 end
@@ -117,7 +107,6 @@ function M.config()
 			})
 		end
 
-		-- see the following
 		-- https://www.reddit.com/r/neovim/comments/16p1e89/masonnvim_clangd_not_finding_header_files/
 		if server == "clangd" then
 			lspconfig["clangd"].setup({
@@ -126,6 +115,7 @@ function M.config()
 					M.on_attach(client, bufnr)
 				end,
 				capabilities = M.common_capabilities,
+				cmd = { "clangd", "--offset-encoding=utf-16" },
 			})
 		end
 
