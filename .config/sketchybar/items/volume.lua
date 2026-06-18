@@ -45,3 +45,23 @@ volume_percent:subscribe("volume_change", function(env)
 	volume_icon:set({ label = { string = icon, color = colour } })
 	volume_percent:set({ label = lead .. volume .. "%" })
 end)
+
+local bar_observer_vol = sbar.add("item", {
+	drawing = false,
+	updates = true,
+})
+
+bar_observer_vol:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local curr_colour = env.COLOUR
+	local colour
+	if mode == "transparent" then
+		colour = curr_colour
+	else
+		colour = colours.TEXT_COLOUR
+	end
+	sbar.animate("exp", 10, function()
+		volume_icon:set({ label = { color = colour } })
+		volume_percent:set({ label = { color = colour } })
+	end)
+end)

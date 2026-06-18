@@ -5,9 +5,10 @@ local cpu_percent = sbar.add("item", "cpu_percent", {
 	width = 0,
 	label = {
 		string = "??%",
-		font = { size = 11, style = "Regular" },
+		font = { size = 10, style = "Regular" },
 	},
-	y_offset = -8,
+	y_offset = -6,
+	--y_offset = -8,
 	update_freq = 1,
 })
 local cpu = sbar.add("item", "cpu", {
@@ -18,9 +19,10 @@ local cpu = sbar.add("item", "cpu", {
 	},
 	label = {
 		string = "CPU",
-		font = { style = "Bold", size = 11 },
+		font = { style = "Bold", size = 10 },
 	},
-	y_offset = 7,
+	y_offset = 6,
+	-- y_offset = 7,
 })
 
 local function update_cpu_usage()
@@ -30,6 +32,21 @@ local function update_cpu_usage()
 	end)
 end
 update_cpu_usage()
+
+cpu:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local curr_colour = env.COLOUR
+	local colour
+	if mode == "transparent" then
+		colour = curr_colour
+	else
+		colour = colours.TEXT_COLOUR
+	end
+	sbar.animate("exp", 10, function()
+		cpu:set({ label = { color = colour } })
+		cpu_percent:set({ icon = { color = colour }, label = { color = colour } })
+	end)
+end)
 
 cpu_percent:subscribe("routine", update_cpu_usage)
 

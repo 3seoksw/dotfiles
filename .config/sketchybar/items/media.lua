@@ -198,3 +198,17 @@ volume_settings:subscribe("media_change", function(env)
 		drawing = (env.INFO.state == "playing") and true or false,
 	})
 end)
+
+volume_settings:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local curr_colour = env.COLOUR
+	local colour
+	if mode == "transparent" then
+		colour = curr_colour
+	else
+		colour = colours.TEXT_COLOUR
+	end
+	sbar.animate("exp", 10, function()
+		volume_settings:set({ icon = { color = colour } })
+	end)
+end)

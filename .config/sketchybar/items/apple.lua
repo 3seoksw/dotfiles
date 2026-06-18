@@ -1,16 +1,17 @@
 local colours = require("colours")
-
-local popup_toggle = "sketchybar --set $NAME popup.drawing=toggle"
+local spaces = require("items.spaces")
+local bar_observer = require("bar_observer")
 
 local apple_logo = sbar.add("item", {
 	padding_left = 15,
 	padding_right = 25,
-	click_script = popup_toggle,
+	-- click_script = popup_toggle,
 	icon = {
 		string = "􀣺 ",
 		font = {
 			style = "Black",
-			size = 24,
+			size = 16.5,
+			-- size = 24,
 		},
 		color = colours.ACCENT_COLOUR,
 		padding_left = 8,
@@ -35,15 +36,27 @@ local apple_logo = sbar.add("item", {
 	},
 })
 
-local apple_prefs = sbar.add("item", {
-	position = "popup." .. apple_logo.name,
-	icon = "􀺽 ",
-	label = "Preferences",
-})
+local function toggle_transparency()
+	sbar.exec("sketchybar --query bar", function(bar_query)
+		local colour = bar_query.color
+		local transparent = colours.TRANSPARENT
+		local is_transparent = (colour == transparent or colour == "0x0")
 
-apple_prefs:subscribe("mouse.clicked", function()
-	sbar.exec("open -a 'System Preferences'")
-	apple_logo:set({ popup = { drawing = false } })
+		if is_transparent then
+			sbar.exec("sketchybar --bar color=" .. colours.BAR_COLOUR, function()
+				spaces.update_workspaces()
+			end)
+		else
+			sbar.exec("sketchybar --bar color=" .. colours.TRANSPARENT, function()
+				spaces.update_workspaces()
+			end)
+		end
+	end)
+end
+
+apple_logo:subscribe("mouse.clicked", function()
+	toggle_transparency()
+	bar_observer.toggle()
 end)
 
 apple_logo:subscribe("mouse.exited.global", function()

@@ -1,7 +1,7 @@
 -- APPLE
 return {
+	TRANSPARENT = 0x00000000,
 	BAR_COLOUR = 0xf02c2e34,
-	--BAR_COLOUR = 0xf038383b,
 	SPACE_GREY = 0xf0a4a4ac,
 	WHITE = 0xffffffff,
 	BLACK = 0xff000000,
@@ -14,6 +14,23 @@ return {
 	HOVER = 0xf03C3E46,
 	IVORY = 0xff999999,
 }
+
+-- TOKYONIGHT_MOON
+-- return {
+-- 	TRANSPARENT = 0x00000000,
+-- 	BAR_COLOUR = 0xf01e2030,
+-- 	SPACE_GREY = 0xf0a4a4ac,
+-- 	WHITE = 0xffffffff,
+-- 	BLACK = 0xff000000,
+-- 	TEXT_COLOUR = 0xffffffff,
+-- 	GREY = 0xff7f8490,
+-- 	ACCENT_COLOUR = 0xffffffff,
+-- 	THIRD_COLOUR = 0xff4b83fb,
+-- 	ITEM_BG_COLOUR1 = 0x002c2e34,
+-- 	ITEM_BG_COLOUR2 = 0xf02f334d,
+-- 	HOVER = 0xf02f334d,
+-- 	IVORY = 0xff999999,
+-- }
 
 -- KANAGAWA
 --return {

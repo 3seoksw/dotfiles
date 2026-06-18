@@ -122,6 +122,25 @@ wifi:subscribe({ "wifi_change", "system_woke", "forced" }, function(env)
 	end)
 end)
 
+local bar_observer_wifi = sbar.add("item", {
+	drawing = false,
+	updates = true,
+})
+
+bar_observer_wifi:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local curr_colour = env.COLOUR
+	local colour
+	if mode == "transparent" then
+		colour = curr_colour
+	else
+		colour = colours.TEXT_COLOUR
+	end
+	sbar.animate("exp", 10, function()
+		wifi:set({ icon = { color = colour }, label = { color = colour } })
+	end)
+end)
+
 wifi_bracket:subscribe("mouse.entered", function()
 	wifi_bracket:set({ background = { color = colours.HOVER } })
 end)

@@ -65,3 +65,16 @@ end
 cal:subscribe("routine", update)
 cal:subscribe("forced", update)
 cal:subscribe("mouse.clicked", draw_calendar)
+cal:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local curr_colour = env.COLOUR
+	local colour
+	if mode == "transparent" then
+		colour = curr_colour
+	else
+		colour = colours.TEXT_COLOUR
+	end
+	sbar.animate("exp", 10, function()
+		cal:set({ icon = { color = colour }, label = { color = colour } })
+	end)
+end)

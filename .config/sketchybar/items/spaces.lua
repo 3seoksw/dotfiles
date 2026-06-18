@@ -1,5 +1,6 @@
 local colours = require("colours")
 local get_app_icon = require("app_icons")
+local bar_observer = require("bar_observer")
 
 local AERO = "/usr/local/bin/aerospace"
 local LIST_WORKSPACES_ALL = AERO .. " list-workspaces --all"
@@ -38,7 +39,8 @@ local function update_space_icons(workspace_id)
 	end)
 end
 
-local function update_workspaces()
+local function update_workspaces_(mode)
+	mode = mode or "normal"
 	sbar.exec(LIST_CURRENT, function(focused)
 		local focused_workspace = focused:match("[^\r\n]+")
 		sbar.exec(LIST_WORKSPACES_ALL, function(workspaces)
@@ -46,16 +48,49 @@ local function update_workspaces()
 				local space = spaces[workspace_id]
 				local selected = focused_workspace == workspace_id
 				local colour = (selected and colours.TEXT_COLOUR) or colours.GREY
+				if mode == "transparent" then
+					colour = colours.TRANSPARENT
+				end
 
-				update_space_icons(workspace_id)
-
-				sbar.animate("exp", 5, function()
+				sbar.animate("exp", 10, function()
 					space:set({
 						icon = { color = colour },
 						label = { color = colour },
 					})
 				end)
+
+				update_space_icons(workspace_id)
 			end
+		end)
+	end)
+end
+local function update_workspaces(mode)
+	sbar.exec("sketchybar --query bar", function(bar_query)
+		local bar_colour = bar_query.color
+		local transparent = colours.TRANSPARENT
+		local is_transparent = (bar_colour == transparent or bar_colour == "0x0")
+
+		sbar.exec(LIST_CURRENT, function(focused)
+			local focused_workspace = focused:match("[^\r\n]+")
+			sbar.exec(LIST_WORKSPACES_ALL, function(workspaces)
+				for workspace_id in workspaces:gmatch("[^\r\n]+") do
+					local space = spaces[workspace_id]
+					local selected = focused_workspace == workspace_id
+					local colour = (selected and colours.TEXT_COLOUR) or colours.GREY
+					if is_transparent then
+						colour = transparent
+					end
+
+					sbar.animate("exp", 10, function()
+						space:set({
+							icon = { color = colour },
+							label = { color = colour },
+						})
+					end)
+
+					update_space_icons(workspace_id)
+				end
+			end)
 		end)
 	end)
 end
@@ -66,9 +101,12 @@ sbar.exec(LIST_WORKSPACES_ALL, function(workspaces)
 		if not spaces[workspace_id] then
 			local space = sbar.add("space", "space_" .. workspace_id, {
 				space = workspace_id,
-				icon = { string = workspace_id },
+				icon = {
+					string = workspace_id,
+					font = { size = 16 },
+				},
 				label = {
-					font = "sketchybar-app-font:Regular:16.0",
+					font = "sketchybar-app-font:Regular:14.0",
 					padding_right = 20,
 					y_offset = -1,
 				},
@@ -104,7 +142,22 @@ local space_window_observer = sbar.add("item", {
 	updates = true,
 })
 
+local bar_observer_space = sbar.add("item", {
+	drawing = false,
+	updates = true,
+})
+
+bar_observer_space:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	-- local colour = env.COLOUR
+	update_workspaces(mode)
+end)
+
 space_window_observer:subscribe("system_woke", function()
+	update_workspaces()
+end)
+
+space_window_observer:subscribe("display_change", function()
 	update_workspaces()
 end)
 
@@ -119,3 +172,7 @@ end)
 space_window_observer:subscribe("space_windows_change", function()
 	update_workspaces()
 end)
+
+return {
+	update_workspaces = update_workspaces,
+}

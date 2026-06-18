@@ -1,8 +1,12 @@
 local colours = require("colours")
 local get_app_icon = require("app_icons")
 
-sbar.add("item", "sep", {
-	icon = { string = "􀆊" },
+local refresher = sbar.add("item", "sep", {
+	icon = {
+		color = colours.TEXT_COLOUR,
+		string = "􀆊",
+		font = { size = 15 },
+	},
 	click_script = "sketchybar --reload",
 })
 
@@ -23,6 +27,27 @@ local front_app = sbar.add("item", {
 		border_width = 2,
 	},
 })
+
+local bar_observer_front = sbar.add("item", {
+	drawing = false,
+	updates = true,
+})
+
+bar_observer_front:subscribe("bar_colour_changed", function(env)
+	local mode = env.MODE
+	local colour = env.COLOUR
+	local text_colour = colours.TEXT_COLOUR
+	if mode == "transparent" then
+		text_colour = colour
+	end
+	sbar.animate("exp", 10, function()
+		front_app:set({
+			icon = { color = text_colour },
+			label = { color = text_colour },
+		})
+		refresher:set({ icon = { color = text_colour } })
+	end)
+end)
 
 front_app:subscribe("front_app_switched", function(env)
 	local icon = get_app_icon(env.INFO)

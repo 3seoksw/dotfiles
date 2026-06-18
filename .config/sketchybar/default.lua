@@ -1,13 +1,15 @@
 local settings = require("settings")
 local colours = require("colours")
 
+sbar.add("event", "system_woke", "NSWorkspaceDidWakeNotification")
+
 sbar.default({
 	updates = "when_shown",
 	icon = {
 		font = {
 			family = settings.font,
 			style = "Bold",
-			size = 17.0,
+			size = 18.0,
 		},
 		color = colours.WHITE,
 		padding_left = settings.padding,
@@ -17,7 +19,7 @@ sbar.default({
 		font = {
 			family = settings.font,
 			style = "Bold",
-			size = 14.0,
+			size = 12.0,
 		},
 		color = colours.WHITE,
 		padding_left = settings.padding,
