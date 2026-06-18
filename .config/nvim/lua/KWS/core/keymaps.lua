@@ -18,6 +18,8 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 
 keymap("n", "<leader>dr", ":!clang++ -Wall % && ./a.out<CR>", opts)
 
+keymap("n", "U", "<C-r>", opts)
+
 -- Resizing
 keymap("n", "<C-a>l", ":vertical resize +4<CR>", opts)
 keymap("n", "<C-a>h", ":vertical resize -4<CR>", opts)

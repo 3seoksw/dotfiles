@@ -46,6 +46,14 @@ function M.config()
 		-- swenv
 		{ "<leader>P", group = "Python", icon = " " },
 		{ "<leader>Pe", "<CMD>lua require('swenv.api').pick_venv()<CR>", desc = "Switch env" },
+		{
+			"<leader>Pr",
+			function()
+				local root = vim.fn.getcwd()
+				vim.cmd("!python " .. root .. "/main.py")
+			end,
+			desc = "Run a program",
+		},
 
 		-- LazyGit
 		{ "<leader>g", group = "LazyGit", icon = " " },

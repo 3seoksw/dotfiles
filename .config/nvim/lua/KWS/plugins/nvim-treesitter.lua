@@ -37,6 +37,10 @@ function M.config()
 			"java",
 			"c",
 			"rust",
+			"r",
+			"rnoweb",
+			"yaml",
+			"latex",
 		},
 		incremental_selection = {
 			enable = true,

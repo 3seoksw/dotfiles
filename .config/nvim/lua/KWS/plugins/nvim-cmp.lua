@@ -28,6 +28,12 @@ function M.config()
 	-- require("luasnip.loaders.from_vscode").lazy_load()
 
 	cmp.setup({
+		window = {
+			documentation = {
+				max_width = 50,
+				max_height = 15,
+			},
+		},
 		completion = {
 			completeopt = "menu,menuone,preview,noselect",
 		},
